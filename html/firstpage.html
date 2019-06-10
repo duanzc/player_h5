@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>我的个人网页</title>
+		<!-- <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css" /> -->
+
+		<link rel="stylesheet" type="text/css" href="../css/layui.css" />
+		<link rel="stylesheet" type="text/css" href="../css/layui.mobile.css" />
+		<link rel="stylesheet" type="text/css" href="../css/mystyle.css" />
+		<!-- <link rel="stylesheet" type="text/css" href="../css/main.min.css" /> -->
+	</head>
+	<body>
+
+		<div class="layui-tab">
+			<ul class="layui-tab-title">
+				<li class="layui-this">音乐</li>
+				<li>视频</li>
+			</ul>
+			<div class="layui-tab-content">
+				<div class="layui-tab-item layui-show">
+					<div id="nav" class="top-center">
+						<div id="nav-left" class="divleft">
+							<ul id="ulleft" class="layui-nav layui-nav-tree" lay-filter="test">
+								<li class="layui-nav-item lileft">
+									<a href="javascript:;">改革春风吹满地</a>
+								</li>
+								<li class="layui-nav-item">
+									<a href="javascript:;">We Can't Stop</a>
+								</li>
+							</ul>
+
+						</div>
+						<div id="nav-right" class="divright">
+							<div class="flex-col" style="width: 100%;">
+								<h2 id="p_name" style="color: cornflowerblue;"></h2>
+								<img id="imgpic" class="ro-noimg" src="../img/ic_miao.jpg" style="border-radius: 50%; height: 400px;width: 400px; margin-top: 50px;" />
+							</div>
+
+							<div style=" height: 100px;width: 100%; ">
+								<audio id="mp3">
+									当前浏览器不支持audio
+								</audio>
+								<div class="divplayer">
+									<!-- <img id="player" src="../img/ic_play.png" style="width: 25px;height: 25px;"> -->
+									<i id="player" class="layui-icon layui-icon-play" style="font-size: 25px;"></i>
+									<p id="pstart" style="margin-left: 10px;">00:00</p>
+									<!-- <img id="player" src="../img/ic_pause.png" style="width: 35px;height: 35px;"> -->
+									<!--时间进度条块儿start-->
+									<div class="progressBar">
+										<div id="now" class="pr-bg"></div>
+										<div id="drag" class="drag"></div>
+									</div>
+									<p id="pstop" style="margin-left: 20px;">00:00</p>
+								</div>
+
+								<!-- <div class="htmleaf-content">
+									<div  class="ready-player-1">
+										<audio id="mp3" crossorigin   type="audio/mp3">
+										</audio>
+									</div>
+								</div> -->
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="layui-tab-item">
+					<div id="nav" class="top-center">
+						<!-- <div id="nav-left" class="divleft">
+							<ul id="ulleft" class="layui-nav layui-nav-tree" lay-filter="test">
+								<li class="layui-nav-item lileft">
+									<a href="javascript:;">可不可以</a>
+								</li>
+								<li class="layui-nav-item">
+									<a href="javascript:;">客官不可以</a>
+								</li>
+							</ul>
+
+						</div> -->
+
+						<div id="nav-right" class="divright">
+							<div>
+								<p> 改革春风吹满地</p>
+								<video src="../img/ic_gg.mp4" controls>
+									Your browser does not support the video tag.
+								</video>
+
+								<!-- <embed src="http://player.youku.com/player.php/sid/XMzI2NTc4NTMy/v.swf" width="480" height="400" type="application/x-shockwave-flash">
+								</embed> -->
+							</div>
+
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- <div class="layui-col-xs6 layui-col-sm6 layui-col-md4 layui-col-md-offset4 top-center">
+					<button id="btn_music" type="button" class="layui-btn music"> <i class="layui-icon layui-icon-headset" style="font-size: 15px; color: white;"></i>
+						音乐 </button>
+					<button id="btn_video" type="button" class="layui-btn"><i class="layui-icon layui-icon-play" style="font-size: 15px; color: white;"></i>
+						视频 </button>
+				</div> -->
+
+		</div>
+
+
+		<!-- <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script> -->
+		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/mystyle.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/layui.js" charset="utf-8"></script>
+		<script type="text/javascript">
+			// document.addEventListener('DOMContentLoaded', function() {
+			// 	new GreenAudioPlayer('.ready-player-1');
+			// });
+
+			// console.log(audio.play());
+		</script>
+
+		<!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
+		<script>
+			layui.use('../lay/modules/element', function() {
+				var $ = layui.jquery,
+					element = layui.element; //Tab的切换功能，切换事件监听等，需要依赖element模块
+
+			});
+		</script>
+	</body>
+</html>

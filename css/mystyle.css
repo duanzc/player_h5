@@ -1,0 +1,175 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	/* background-image: url(../img/5c99b7f6404e2.jpg); */
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+
+
+.divtop {
+	width: 100%;
+	height: 80px;
+}
+
+.divleft {
+	background: blanchedalmond;
+	width: 200px;
+	height: 400px;
+}
+
+.divright {
+	width: 100%;
+	height: 400px;
+}
+
+.top-center {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+.flex-col{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.lileft {
+	background: #009688;
+	color: white;
+}
+
+.music {
+	background: #01AAED;
+}
+
+@keyframes ro-img1 {
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+.ro-img {
+	animation: ro-img1 16s linear infinite;
+}
+
+.ro-unimg {
+	animation: ro-img1 16s linear infinite;
+}
+
+
+
+.middle-table {
+	border: 1px solid rgba(84, 77, 71, 0.4);
+	box-shadow: 0px 0px 15px rgba(84, 77, 71, 0.6) inset;
+	width: 550px;
+	height: 400px;
+	margin: auto;
+	margin-top: 300px;
+	background-color: rgba(170, 123, 93, 0.4);
+	border-radius: 12px;
+}
+
+.firstpage-btn {
+	background-color: transparent;
+	outline: ;
+	background-image: url(../img/ic_next.png);
+	background-size: 100% 100%;
+	height: 50px;
+	width: 100px;
+}
+
+.firstpage-href {
+	position: fixed;
+	bottom: 30px;
+	right: 20px;
+}
+
+.firstpage-href span {
+	font-size: 60px;
+	color: rgba(225, 225, 225, 0.5);
+}
+
+.secondpage-vedio {
+	margin-top: 200px;
+	margin-left: 700px;
+}
+
+.secondpage-href {
+	position: fixed;
+	bottom: 30px;
+	left: 20px;
+}
+
+.secondpage-href span {
+	font-size: 60px;
+	color: rgba(151, 121, 93, 0.5);
+}
+
+.secondpage-inav {
+	background-color: #E4E0DD;
+	border: none;
+}
+
+/* 播放器背景*/
+.divplayer {
+	margin-top: 150px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	position: relative;
+	align-items: center;
+	/* border: 1px solid #009F95; */
+	border-radius: 20px;
+	margin-left: 30%;
+	margin-right: 30%;
+	padding: 50px;
+	background: url(../img/ic_mbg.jpg) no-repeat;
+}
+
+/*进度条样式*/
+.progressBar {
+	height: 5px;
+	bottom: 35px;
+	width: 400px;
+	background: #cccccc;
+	margin-left: 10px;
+	border-radius: 35px;
+}
+
+.progressBar div {
+	position: absolute;
+}
+
+.pr-bg {
+	background: orangered;
+	width: 0;
+	height: 5px;
+	border-radius: 35px;
+}
+
+/*进度条圆点*/
+.drag {
+	width: 15px;
+	height: 15px;
+	background: palevioletred;
+	margin-top: -5px;
+	/* opacity: 0.9; */
+	border-radius: 50px;
+	/* box-shadow: #fff 0 0 5px; */
+}
+
+.video1{
+	 
+}
