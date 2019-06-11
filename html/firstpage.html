@@ -14,7 +14,6 @@
 		<!-- <link rel="stylesheet" type="text/css" href="../css/main.min.css" /> -->
 	</head>
 	<body>
-
 		<div class="layui-tab">
 			<ul class="layui-tab-title">
 				<li class="layui-this">音乐</li>
@@ -22,25 +21,26 @@
 			</ul>
 			<div class="layui-tab-content">
 				<div class="layui-tab-item layui-show">
-					<div id="nav" class="top-center">
-						<div id="nav-left" class="divleft">
+					<div id="nav-right" class="divright layui-row">
+						<canvas id="canvas">您的浏览器不支持画布，请您更换浏览器!!</canvas>
+						<div class="layui-col-lg2">
 							<ul id="ulleft" class="layui-nav layui-nav-tree" lay-filter="test">
 								<li class="layui-nav-item lileft">
-									<a href="javascript:;">改革春风吹满地</a>
+									<a href="#">改革春风吹满地</a>
 								</li>
 								<li class="layui-nav-item">
-									<a href="javascript:;">We Can't Stop</a>
+									<a href="#">We Can't Stop</a>
 								</li>
 							</ul>
-
 						</div>
-						<div id="nav-right" class="divright">
+
+						<div class="layui-col-lg10">
 							<div class="flex-col" style="width: 100%;">
-								<h2 id="p_name" style="color: cornflowerblue;"></h2>
-								<img id="imgpic" class="ro-noimg" src="../img/ic_miao.jpg" style="border-radius: 50%; height: 400px;width: 400px; margin-top: 50px;" />
+								<h2 id="p_name" style="color: white;margin-top: 20px;"></h2>
+								<img id="imgpic" src="../img/ic_miao.jpg" class="img-big" />
 							</div>
 
-							<div style=" height: 100px;width: 100%; ">
+							<div style="height: 100px;width: 100%; ">
 								<audio id="mp3">
 									当前浏览器不支持audio
 								</audio>
@@ -57,69 +57,49 @@
 									<p id="pstop" style="margin-left: 20px;">00:00</p>
 								</div>
 
-								<!-- <div class="htmleaf-content">
-									<div  class="ready-player-1">
-										<audio id="mp3" crossorigin   type="audio/mp3">
-										</audio>
-									</div>
-								</div> -->
 							</div>
 						</div>
 					</div>
+
 				</div>
-
 				<div class="layui-tab-item">
-					<div id="nav" class="top-center">
-						<!-- <div id="nav-left" class="divleft">
-							<ul id="ulleft" class="layui-nav layui-nav-tree" lay-filter="test">
-								<li class="layui-nav-item lileft">
-									<a href="javascript:;">可不可以</a>
-								</li>
-								<li class="layui-nav-item">
-									<a href="javascript:;">客官不可以</a>
-								</li>
-							</ul>
-
-						</div> -->
-
-						<div id="nav-right" class="divright">
+					<div id="nav">
+						<div id="nav-right">
 							<div>
-								<p> 改革春风吹满地</p>
+								<!-- <p> 改革春风吹满地</p> -->
 								<video src="../img/ic_gg.mp4" controls>
 									Your browser does not support the video tag.
 								</video>
 
-								<!-- <embed src="http://player.youku.com/player.php/sid/XMzI2NTc4NTMy/v.swf" width="480" height="400" type="application/x-shockwave-flash">
-								</embed> -->
 							</div>
 
 
 						</div>
 					</div>
 				</div>
-			</div>
-			<!-- <div class="layui-col-xs6 layui-col-sm6 layui-col-md4 layui-col-md-offset4 top-center">
+				<!-- <div class="layui-col-xs6 layui-col-sm6 layui-col-md4 layui-col-md-offset4 top-center">
 					<button id="btn_music" type="button" class="layui-btn music"> <i class="layui-icon layui-icon-headset" style="font-size: 15px; color: white;"></i>
 						音乐 </button>
 					<button id="btn_video" type="button" class="layui-btn"><i class="layui-icon layui-icon-play" style="font-size: 15px; color: white;"></i>
 						视频 </button>
 				</div> -->
-
+			</div>
 		</div>
 
 
 		<!-- <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script> -->
 		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../js/mystyle.js" type="text/javascript" charset="utf-8"></script>
-		<script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/mycanvas.js" type="text/javascript" charset="utf-8"></script>
+		<!-- <script src="../js/app.js" type="text/javascript" charset="utf-8"></script> -->
 		<script src="../js/layui.js" charset="utf-8"></script>
-		<script type="text/javascript">
+		<!-- <script type="text/javascript">
 			// document.addEventListener('DOMContentLoaded', function() {
 			// 	new GreenAudioPlayer('.ready-player-1');
 			// });
 
 			// console.log(audio.play());
-		</script>
+		</script> -->
 
 		<!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
 		<script>

@@ -9,6 +9,7 @@ $(function() {
 			"src": "../music/hhhh.mp3"
 		}]
 	};
+
 	var height = $(document).height();
 	var mp3 = $("#mp3");
 	var imgpic = $("#imgpic");
@@ -19,9 +20,15 @@ $(function() {
 	var au = document.getElementById("mp3");
 	var drag = document.getElementById("drag");
 
-	$("#nav").height((height / 10) * 9);
+	// $("#nav").height((height / 10) * 9);
 	$("#nav-left").height((height / 10) * 9);
 	$("#nav-right").height((height / 10) * 9);
+	$("#canvas").height((height / 10) * 9);
+
+	// for (var i = 0; i < musiclist.data.length; i++) {
+	// 	var li = '<li class="layui-nav-item"><a href="#">' + musiclist.data[i].name + '</a></li>';
+	// 	$("#ulleft").append(li);
+	// }
 
 	$("#ulleft").on("click", "li", function() {
 		var index = $(this).index();
@@ -37,16 +44,15 @@ $(function() {
 	});
 
 
-
 	//播放状态
 	var state = false;
 	// 获取歌曲时间长度
 	var mduration;
-	//进度条
+	//进度条每秒应该走多少
 	var mparg;
 	//定时器
 	var inval;
-	//定时器每秒进度
+	//定时器总进度
 	var y = 0;
 	//时间计时初始化 秒 / 分
 	var times = 0;
@@ -63,8 +69,8 @@ $(function() {
 		au.addEventListener("loadeddata", function() {
 			// 获取歌曲时间长度
 			mduration = au.duration;
-			mduration = mduration.toFixed(2);
-			// console.log(parseFloat(mduration));
+			mduration = parseInt(mduration);
+			console.log(parseFloat(mduration));
 
 			//分钟
 			var minute = mduration / 60;
@@ -119,7 +125,7 @@ $(function() {
 			imgpic.attr("class", "ro-img");
 
 		} else {
-			imgpic.attr("class", "ro-noimg");
+			imgpic.attr("class", "img-big");
 		}
 	}
 
@@ -131,6 +137,7 @@ $(function() {
 		// if (state) {
 		// mparg++;
 		y += mparg;
+		// y = mparg+y;
 		now.width(parseInt(y));
 		drag.style.marginLeft = parseInt(y) + "px";
 		// console.log(parseInt(y));
@@ -145,13 +152,15 @@ $(function() {
 		} else {
 			timem++;
 			times = 0;
+			
+			pstart.text("0" + timem + ":0" + times);
 
-			if (times < 10) {
-				pstart.text("0" + timem + ":0" + times);
-				// times++;
-			} else {
-				pstart.text("0" + timem + ":" + times);
-			}
+			// if (times < 10) {
+			// 	
+			// 	// times++;
+			// } else {
+			// 	pstart.text("0" + timem + ":" + times);
+			// }
 		}
 
 		// } else {
@@ -168,7 +177,7 @@ $(function() {
 		clearInterval(inval);
 		now.width(0);
 		drag.style.marginLeft = 0 + "px";
-		imgpic.attr("class", "ro-noimg");
+		imgpic.attr("class", "img-big");
 		$("#player").attr("class", "layui-icon layui-icon-play");
 		pstart.text("00:00");
 		y = 0;

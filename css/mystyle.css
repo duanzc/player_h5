@@ -1,15 +1,29 @@
 * {
 	padding: 0;
 	margin: 0;
+	box-sizing: border-box;
 }
 
 body {
 	/* background-image: url(../img/5c99b7f6404e2.jpg); */
-	background-size: cover;
-	background-repeat: no-repeat;
+	/* background-size: cover;
+	background-repeat: no-repeat; */
 }
 
+video {
+	width: 100%;
+	max-width: 80%;
+	height: auto;
+	max-height: 700px;
+	margin-left: 10%;
+	margin-top: 100px;
+}
 
+canvas {
+	width: 99%;
+	z-index: -1;
+	position: absolute;
+}
 
 .divtop {
 	width: 100%;
@@ -19,26 +33,25 @@ body {
 .divleft {
 	background: blanchedalmond;
 	width: 200px;
-	height: 400px;
 }
 
 .divright {
 	width: 100%;
-	height: 400px;
 }
 
-.top-center {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
-}
+ 
 
-.flex-col{
+.flex-col {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+}
+
+.flex-row {
+	display: flex;
+	flex-direction: row;
+
 }
 
 .lileft {
@@ -61,14 +74,16 @@ body {
 }
 
 .ro-img {
+	border-radius: 50%;
+	max-height: 25%;
+	max-width: 25%;
+	margin-top: 50px;
 	animation: ro-img1 16s linear infinite;
 }
 
-.ro-unimg {
-	animation: ro-img1 16s linear infinite;
-}
-
-
+/* .ro-unimg {
+	animation: ro-img1   linear infinite;
+} */
 
 .middle-table {
 	border: 1px solid rgba(84, 77, 71, 0.4);
@@ -136,12 +151,14 @@ body {
 	margin-right: 30%;
 	padding: 50px;
 	background: url(../img/ic_mbg.jpg) no-repeat;
+	background-size: 100% 100%;
 }
 
 /*进度条样式*/
 .progressBar {
 	height: 5px;
 	bottom: 35px;
+	/* width: 90%; */
 	width: 400px;
 	background: #cccccc;
 	margin-left: 10px;
@@ -154,7 +171,7 @@ body {
 
 .pr-bg {
 	background: orangered;
-	width: 0;
+	width: 0px;
 	height: 5px;
 	border-radius: 35px;
 }
@@ -170,6 +187,9 @@ body {
 	/* box-shadow: #fff 0 0 5px; */
 }
 
-.video1{
-	 
+.img-big {
+	border-radius: 50%;
+	max-height: 25%;
+	max-width: 25%;
+	margin-top: 50px;
 }
