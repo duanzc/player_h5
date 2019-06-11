@@ -92,7 +92,7 @@ $(function() {
 	
 	$("#topmusic").click(function(){
 		$("#video").get(0).pause();
-	});
+	}); 
 
 	dur();
 
