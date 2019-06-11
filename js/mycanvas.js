@@ -9,7 +9,7 @@ $(function() {
 	//自适应浏览器窗口
 	window.onresize = function() {
 		w = can.width = window.innerWidth,
-			h = can.height = window.innerHeight;
+		h = can.height = window.innerHeight;
 	}
 	//         ctx.fillStyle="yellow"
 	//       ctx.fillRect(100,100,100,100);
@@ -82,7 +82,7 @@ $(function() {
 	//实例初始化
 	setInterval(function() {
 		//绘制一个透明层
-		ctx.fillStyle = "rgba(56,163,179,0.1)";
+		ctx.fillStyle = "rgba(56,163,179,0.3)";
 		ctx.fillRect(0, 0, w, h);
 		for (var i = 0; i < drops.length; i++) {
 			drops[i].draw();

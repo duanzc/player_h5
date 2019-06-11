@@ -3,10 +3,16 @@ $(function() {
 	var musiclist = {
 		"data": [{
 			"name": "改革春风吹满地",
-			"src": "../music/ggcf.mp3"
+			"src": "../music/ggcf.mp3",
+			"img": "../img/ic_dog.jpg"
 		}, {
-			"name": "We Can't Stop",
-			"src": "../music/hhhh.mp3"
+			"name": "根本停不下来",
+			"src": "../music/hhhh.mp3",
+			"img": "../img/ic_miao.jpg"
+		}, {
+			"name": "魔性",
+			"src": "../music/11.mp3",
+			"img": "../img/ic_mao.jpg"
 		}]
 	};
 
@@ -19,30 +25,6 @@ $(function() {
 	var now = $("#now");
 	var au = document.getElementById("mp3");
 	var drag = document.getElementById("drag");
-
-	// $("#nav").height((height / 10) * 9);
-	$("#nav-left").height((height / 10) * 9);
-	$("#nav-right").height((height / 10) * 9);
-	$("#canvas").height((height / 10) * 9);
-
-	// for (var i = 0; i < musiclist.data.length; i++) {
-	// 	var li = '<li class="layui-nav-item"><a href="#">' + musiclist.data[i].name + '</a></li>';
-	// 	$("#ulleft").append(li);
-	// }
-
-	$("#ulleft").on("click", "li", function() {
-		var index = $(this).index();
-		// console.log(index);
-
-		$(this).addClass("lileft").siblings().removeClass("lileft");
-
-		//点击切换音乐
-		mp3.attr("src", musiclist.data[index].src);
-		pname.text(musiclist.data[index].name);
-		//重置数据
-		resetdata();
-	});
-
 
 	//播放状态
 	var state = false;
@@ -57,10 +39,60 @@ $(function() {
 	//时间计时初始化 秒 / 分
 	var times = 0;
 	var timem = 0;
+	//播放第几首歌
+	var inmusic = 0;
 
+	$("#i_up").hide();
 	mp3.attr("src", musiclist.data[0].src);
 	pname.text(musiclist.data[0].name);
-	// pname.text("改革春风吹满地");
+	imgpic.attr("src", musiclist.data[0].img);
+
+	$("#i_up").click(function() {
+
+		//重置数据
+		resetdata();
+		inmusic--;
+		if (inmusic >= 0) {
+
+			$("#i_down").show();
+			mp3.attr("src", musiclist.data[inmusic].src);
+			pname.text(musiclist.data[inmusic].name);
+			imgpic.attr("src", musiclist.data[inmusic].img);
+			play();
+
+			if (inmusic == 0) {
+				$("#i_up").hide();
+			}
+		}
+
+	});
+
+	$("#i_down").click(function() {
+		//重置数据
+		resetdata();
+		inmusic++;
+		if (inmusic < musiclist.data.length) {
+			$("#i_up").show();
+			mp3.attr("src", musiclist.data[inmusic].src);
+			pname.text(musiclist.data[inmusic].name);
+			imgpic.attr("src", musiclist.data[inmusic].img);
+			play();
+
+			if (inmusic == musiclist.data.length - 1) {
+				$("#i_down").hide();
+			}
+		}
+
+	});
+
+	$("#topvideo").click(function() {
+		//重置数据
+		resetdata();
+	});
+	
+	$("#topmusic").click(function(){
+		$("#video").get(0).pause();
+	});
 
 	dur();
 
@@ -70,7 +102,7 @@ $(function() {
 			// 获取歌曲时间长度
 			mduration = au.duration;
 			mduration = parseInt(mduration);
-			console.log(parseFloat(mduration));
+			// console.log(parseFloat(mduration));
 
 			//分钟
 			var minute = mduration / 60;
@@ -104,21 +136,26 @@ $(function() {
 	$("#player").click(function() {
 
 		if (au.paused) {
-			$("#player").attr("class", "layui-icon layui-icon-pause");
-			mp3.get(0).play();
-			state = true;
-			inval = setInterval(function() {
-				parg()
-			}, 1000);
+			play();
 		} else {
 			$("#player").attr("class", "layui-icon layui-icon-play");
 			mp3.get(0).pause();
 			state = false;
 			clearin();
+			onpic();
 		}
 
-		onpic();
 	});
+
+	function play() {
+		$("#player").attr("class", "layui-icon layui-icon-pause");
+		mp3.get(0).play();
+		state = true;
+		inval = setInterval(function() {
+			parg()
+		}, 1000);
+		onpic();
+	}
 
 	function onpic() {
 		if (state) {
@@ -152,7 +189,7 @@ $(function() {
 		} else {
 			timem++;
 			times = 0;
-			
+
 			pstart.text("0" + timem + ":0" + times);
 
 			// if (times < 10) {
@@ -179,9 +216,30 @@ $(function() {
 		drag.style.marginLeft = 0 + "px";
 		imgpic.attr("class", "img-big");
 		$("#player").attr("class", "layui-icon layui-icon-play");
+		mp3.get(0).load();
 		pstart.text("00:00");
 		y = 0;
 		times = 0;
 		timem = 0;
 	}
+});
+
+var videolist = {
+	"data": [{
+		"name": "休息",
+		"src": "../music/ic_hj.mp4"
+	}, {
+		"name": "改革春风吹满地",
+		"src": "../music/ic_gg.mp4"
+	}]
+};
+
+//视频
+$("#videoul").on("click", "li", function() {
+
+	var index = $(this).index();
+
+	console.log(index)
+
+	$("#video").attr("src", videolist.data[index].src);
 });
